@@ -1,7 +1,6 @@
-package main.java.lab4.kick;
+package kick;
 
-import main.java.lab4.lotr.Character;
-import java.util.Random;
+import lotr.Character;
 
 public interface BasicKick {
     void kick(Character character1,Character character2);

@@ -1,27 +1,19 @@
-package main.java.lab4.lotr;
+package lotr;
 
+import kick.NobleKick;
 
-//class King
-//   - attributes: int power=from 5 to 15, int hp=from 5 to 15
-//           - methods: void kick(Character c) {
-//           decrease number of hp of the enemy by random
-//           number which will be in the range of his power
-//           }
-
-import main.java.lab4.kick.NobleKick;
-import main.java.lab4.lotr.Character;
-
-
-public class King extends Character implements NobleKick {
+public class King extends Character {
     public King(){
-        super(randomGener.nextInt(5, 16),
-                randomGener.nextInt(5, 16));
+        super(randomGenerator.nextInt(11),
+                randomGenerator.nextInt(11));
+        setPower(getPower() + 5);
+        setHp(getHp() + 5);
     }
 
     public void kick(Character c){
         System.out.println("\nKing is going to hit his enemy. \nBefore hit health points of enemy are: " + c.getHp()  +
                 "\nAnd his health points are: " + c.getHp());
-        c.setHp(c.getHp() - randomGener.nextInt(0, c.getHp() + 1));
+        c.setHp(c.getHp() - randomGenerator.nextInt(c.getHp() + 1));
         System.out.println("*fight*\nAfter fight health points of enemy are: " + c.getHp());
     }
 }

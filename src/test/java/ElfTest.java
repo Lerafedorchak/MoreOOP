@@ -1,8 +1,6 @@
-package main.java.lab4.testing;
-
-import main.java.lab4.lotr.Character;
-import main.java.lab4.lotr.Elf;
-import main.java.lab4.lotr.Hobbit;
+import lotr.Elf;
+import lotr.Hobbit;
+import lotr.Character;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

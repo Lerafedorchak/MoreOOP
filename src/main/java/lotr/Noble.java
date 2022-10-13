@@ -1,16 +1,14 @@
-package main.java.lab4.lotr;
-import main.java.lab4.kick.NobleKick;
+package lotr;
 
-import java.util.Random;
+import kick.NobleKick;
 
-public class Noble extends Character implements NobleKick {
-    private static final Random randomGener = new Random();
-
+public class Noble extends Character {
     public Noble(int min, int max){
-        super((randomGener.nextInt(max - min + 1) + min), (randomGener.nextInt( max - min + 1) + min));
+        super((randomGenerator.nextInt(max - min + 1) + min), (randomGenerator.nextInt( max - min + 1) + min));
+        kick = new NobleKick();
     }
     @Override
     public void kick(Character character){
-        kick(this, character);
+        kick.kick(this, character);
     }
 }

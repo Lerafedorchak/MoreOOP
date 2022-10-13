@@ -1,4 +1,10 @@
-package main.java.lab4.kick;
+package kick;
 
-public interface CryKick {
+import lotr.Character;
+
+public class CryKick implements BasicKick {
+    @Override
+    public void kick(Character character1, Character character2) {
+
+    }
 }

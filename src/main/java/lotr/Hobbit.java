@@ -1,15 +1,14 @@
-package main.java.lab4.lotr;
+package lotr;
 
-
-import main.java.lab4.kick.CryKick;
-import main.java.lab4.lotr.Character;
+import kick.CryKick;
 
 //class Hobbit
 //  - attributes: int power=0, int hp=3
 //          - methods: void kick(Character c) { toCry() }
-public class Hobbit extends Character implements CryKick {
+public class Hobbit extends Character {
     public Hobbit() {
         super(0, 3);
+        kick = new CryKick();
     }
     public void toCry() {
         System.out.println("\nInstead of fight Hobbit starts crying :(");

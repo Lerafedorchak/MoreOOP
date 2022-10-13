@@ -1,21 +1,22 @@
-package main.java.lab4.lotr;
+package lotr;
 
-//class CharacterFactory
-//   - methods: Character createCharacter() {
-//           returns random instance of any existing character
-//           }
+import lombok.SneakyThrows;
+import org.reflections.Reflections;
 
 import java.util.Random;
+import java.util.Set;
+
+import static org.reflections.scanners.Scanners.SubTypes;
 
 public class CharacterFactory {
-    static Random random = new Random();
-    public Character createCharacter(){
-        int characterId = random.nextInt(0, 4);
-        return switch (characterId) {
-            case 1 -> new Elf();
-            case 2 -> new Knight();
-            case 3 -> new King();
-            default -> new Hobbit();
-        };
+    @SneakyThrows
+    public static Character createCharacter() {
+        Reflections reflections = new Reflections("lotr");
+
+        Set<Class<?>> subTypes =
+                reflections.get(SubTypes.of(Character.class).asClass());
+
+        Class cls = (Class) subTypes.toArray()[new Random().nextInt(subTypes.size())];
+        return (Character) cls.getDeclaredConstructor().newInstance();
     }
 }

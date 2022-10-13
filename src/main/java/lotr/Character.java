@@ -1,11 +1,14 @@
-package main.java.lab4.lotr;
+package lotr;
 
 import java.util.Random;
+import kick.BasicKick;
+import kick.CryKick;
 
 public abstract class Character{
-    public static Random randomGener = new Random();
+    public static Random randomGenerator = new Random();
     private int power;
     private int hp;
+    BasicKick kick;
 
     public Character(int power, int hp) {
         this.power = power;
